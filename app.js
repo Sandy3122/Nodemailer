@@ -1,10 +1,17 @@
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 // const exphbs = require('express-handlebars');
-const path = require('path');
+const path = require("path");
 const nodemailer = require('nodemailer');
 
-const app = express();
+app.path = require("path");
+app.use(express.json());        //this is to accept data in json format
+// app.use(express.urlencoded());  //this is basically to decode the data send through html form
+
+
+
+
 
 // View engine setup
 // app.engine('handlebars', exphbs());
@@ -12,14 +19,15 @@ app.set('view engine', 'hbs');
 
 
 // Static folder
-app.use('/public', express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, "public")));
+
 
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  // res.sendFile(__dirname + '/views/contact.handlers');
+  // res.sendFile(__dirname + '/contact.html');
   res.render('contact');
 });
 
@@ -69,7 +77,14 @@ app.post('/send', (req, res) => {
       console.log('Message sent: %s', info.messageId);   
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-      res.render('contact', {msg:'Email has been sent'});
+
+
+      // var element = document.getElementById('remsg');
+      // element.innerHTML = `Thank For Your Wishes, ${req.body.name}`
+
+
+      // res.sendFile('./views/contact.html', {msg:'Email has been sent'});
+      res.render('contact', {msg:`Thank You For Your Wishes, ${req.body.name} Ji`});
   });
   });
 
