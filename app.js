@@ -9,6 +9,20 @@ app.path = require("path");
 app.use(express.json());        //this is to accept data in json format
 // app.use(express.urlencoded());  //this is basically to decode the data send through html form
 
+const helmet = require('helmet');
+// app.use(helemt());
+app.use(helmet.contentSecurityPolicy({
+  directives:{
+    defaultSrc:["'self'"],
+    scriptSrc:["'self'"],
+    styleSrc:["'self'"],
+    fontSrc:["'self'", 'https://fonts.gstatic.com/s/lato']
+  }
+
+
+}));
+
+
 
 
 

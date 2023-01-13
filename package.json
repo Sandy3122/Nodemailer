@@ -14,6 +14,7 @@
     "express-handlebars": "^3.1.0",
     "handlebars": "^4.7.7",
     "hbs": "^4.2.0",
+    "helmet": "^6.0.1",
     "nodecontactform": "github:bradtraversy/nodecontactform",
     "nodemailer": "^6.9.0",
     "path": "^0.12.7"
