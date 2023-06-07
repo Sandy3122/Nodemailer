@@ -13,14 +13,14 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="brand"><span>Acme</span> Web Design</h1>
+    <h1 class="brand">Nodemailer Contact Form</h1>
     <div class="wrapper animated bounceInLeft">
       <div class="company-info">
-        <h3>Acme Web Design</h3>
+        <h3>Nodemailer Contact Form</h3>
         <ul>
-          <li><i class="fa fa-road"></i> 44 Something st</li>
-          <li><i class="fa fa-phone"></i> (555) 555-5555</li>
-          <li><i class="fa fa-envelope"></i> test@acme.test</li>
+          <li><i class="fa fa-road"></i> Sandeep Seeram</li>
+          <li><i class="fa fa-phone"></i> 123456789 </li>
+          <li><i class="fa fa-envelope"></i> sandeep@gamil.com</li>
         </ul>
       </div>
       <div class="contact">
@@ -29,7 +29,7 @@
           <h3>{{msg}}</h3
         </div>
         {{!-- <h2 id="remsg" class="text-success text-center"></h2> --}}
-        <form method="POST" action="send" onsubmit="return false reset()">
+        <form id="form" method="POST" action="send">
           <p>
             <label>Name</label>
             <input type="text" name="name">
@@ -58,4 +58,11 @@
     </div>
   </div>
 </body>
+<script>
+    var form = document.getElementById('form');
+
+    form.addEventListener("submit", function(event){
+      event.preventDefault(); // prevents the form, from auto submitting.
+    })
+</script>
 </html>

@@ -65,8 +65,8 @@ app.post('/send', (req, res) => {
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-        user: 'tarunianduday@gmail.com', // generated ethereal user
-        pass: 'wlvylwfusenplrsq'  // generated ethereal password
+        user: 'arjunreddyseeram87@gmail.com', // generated ethereal user
+        pass: 'avffaqgcdbfezkgs'  // generated ethereal password
     },
     tls:{
       rejectUnauthorized:false
@@ -76,9 +76,9 @@ app.post('/send', (req, res) => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-      from: 'tarunianduday@gmail.com', // sender address
+      from: `${req.body.email}`, // sender address
       to: 'arjunreddyseeram87@gmail.com', // list of receivers
-      subject: 'Lovely Wishes', // Subject line
+      subject: 'Contaact Details', // Subject line
       text: 'Hello world?', // plain text body
       html: output // html body
   };
@@ -98,7 +98,7 @@ app.post('/send', (req, res) => {
 
 
       // res.sendFile('./views/contact.html', {msg:'Email has been sent'});
-      res.render('contact', {msg:`Thank You For Your Wishes, ${req.body.name} Ji`});
+      res.render('contact', {msg:`Thank You For Contacting, ${req.body.name} Ji`});
   });
   });
 

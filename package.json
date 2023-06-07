@@ -4,7 +4,8 @@
   "description": "Sample app using nodemailer",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "author": "Brad Traversy",
   "license": "MIT",
@@ -15,8 +16,11 @@
     "handlebars": "^4.7.7",
     "hbs": "^4.2.0",
     "helmet": "^6.0.1",
-    "nodecontactform": "github:bradtraversy/nodecontactform",
+    "nodecontactform": "https://github.com/Sandy3122/Nodemailer.git",
     "nodemailer": "^6.9.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
